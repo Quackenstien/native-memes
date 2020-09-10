@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {styles} from './components/Styles/StyleSheet';
+import {styles} from '../../Styles/StyleSheet';
 
 SearchPage = () => (
   <View style={styles.center}>
