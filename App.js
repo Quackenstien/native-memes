@@ -1,8 +1,18 @@
 import React, {useState} from 'react';
-import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
-import {styles} from './StyleSheet';
 import Header from './components/Header';
 import FadeInView from 'react-native-fade-in-view';
+
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {createStackNavigator} from '@react-navigation/stack';
+
+import {View, Image, Text, TouchableOpacity, Alert} from 'react-native';
+import {styles} from './components/Styles/StyleSheet';
+
+const Drawer = createDrawerNavigator();
+const MaterialBottomTabs = createMaterialBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
   const [items, setItems] = useState();
@@ -28,13 +38,15 @@ const App = () => {
     );
 
   return (
-    <View style={styles.container}>
-      <Header title="Memes Me" />
-      <View style={styles.tinyLogo}>{items}</View>
-      <TouchableOpacity style={styles.btn} onPress={onPress}>
-        <Text>Load Image</Text>
-      </TouchableOpacity>
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Header title="Memes Me" />
+        <View style={styles.tinyLogo}>{items}</View>
+        <TouchableOpacity style={styles.btn} onPress={onPress}>
+          <Text>Load Image</Text>
+        </TouchableOpacity>
+      </View>
+    </NavigationContainer>
   );
 };
 

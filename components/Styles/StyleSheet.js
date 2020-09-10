@@ -36,4 +36,13 @@ export const styles = StyleSheet.create({
     height: '10%',
     width: '100%',
   },
+  center: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 36,
+    marginBottom: 16,
+  },
 });
